@@ -71,3 +71,12 @@ jobs:
       with:
         name: macOS 64-bit ARM
         path: dist/packwiz_darwin_arm64/
+
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
+        prerelease: true
+        title: "Build"
+        files: |
+          dist/packwiz_linux_amd64_v1/
